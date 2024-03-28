@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Contact from "./components/Contact/Contact";
 import ContactList from "./components/ContactList/ContactList";
+import SearchBox from "./components/SearchBox/SearchBox";
 
 function App() {
   const [contacts, setContacts] = useState([
@@ -11,10 +12,20 @@ function App() {
     { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
   ]);
 
+  const [filterValue, setFilterValue] = useState("");
+
+  const handleFilterChange = (event) => {
+    setFilterValue(event.target.value);
+  };
+
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactList contacts={contacts} />
+      <SearchBox
+        filterValue={filterValue}
+        handleFilterChange={handleFilterChange}
+      />
+      <ContactList contacts={contacts} filterValue={filterValue} />
     </div>
   );
 }
