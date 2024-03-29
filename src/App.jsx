@@ -1,12 +1,12 @@
+import "./App.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./App.css";
 
 import { nanoid } from "nanoid";
 import Contact from "./components/Contact/Contact";
+import SearchBox from "./components/SearchBox/SearchBox";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
-import SearchBox from "./components/SearchBox/SearchBox";
 
 function App() {
   const [contacts, setContacts] = useState(() => {
