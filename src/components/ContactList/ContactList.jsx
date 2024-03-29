@@ -1,4 +1,5 @@
 import Contact from "../Contact/Contact";
+import styles from "./ContactList.module.css";
 
 const ContactList = ({ contacts, filterValue, onDeleteContact }) => {
   const filteredContacts = contacts.filter((contact) =>
@@ -6,7 +7,7 @@ const ContactList = ({ contacts, filterValue, onDeleteContact }) => {
   );
 
   return (
-    <div>
+    <div className={styles.contactsList}>
       {filteredContacts.map((contact) => (
         <Contact
           key={contact.id}
