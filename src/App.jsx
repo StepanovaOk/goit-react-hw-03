@@ -11,7 +11,7 @@ import ContactList from "./components/ContactList/ContactList";
 function App() {
   const [contacts, setContacts] = useState(() => {
     const contacts = window.localStorage.getItem("contacts");
-    return JSON.parse(contacts);
+    return JSON.parse(contacts) ?? [];
   });
 
   const [filterValue, setFilterValue] = useState("");
