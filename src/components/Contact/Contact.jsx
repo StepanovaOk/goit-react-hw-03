@@ -3,7 +3,7 @@ import { FaUser } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 
 const Contact = ({ contact, onDeleteContact }) => {
-  const { name, number } = contact;
+  const { id, name, number } = contact;
 
   return (
     <div className={styles.contactContainer}>
@@ -18,7 +18,7 @@ const Contact = ({ contact, onDeleteContact }) => {
       </div>
       <button
         className={styles.btnDelete}
-        onClick={(id) => {
+        onClick={() => {
           onDeleteContact(id);
         }}
       >
